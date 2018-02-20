@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Jobs Db</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li class="logo">logo</li>
+      <li>Home</li>
+      <li>Login</li>
+      <li>Register</li>
+    </ul>
+  </nav>
+  <div class="video">
+    <video autoplay muted loop id="myVideo">
+      <source src="videos/video4.webm" type="video/mp4">
+    </video>
+    <div class="container">
+      <header class="header">
+        <h1>Your Job Tracker</h1>
+      </header>
+      <hr>
+        <section>
+          <div class="row">
+            <div class="col-6">
+              <form action="/insert" method="POST">
+                <div class="form-group">
+                  <label for="jobTitle">Job Title</label>
+                  <input type="text" class="form-control" name="jobtitle" id="jobtitle" placeholder="Web Application Dev">
+                </div>
+                <div class="form-group">
+                  <label for="comapanyName">Company Name</label>
+                  <input type="text" class="form-control" placeholder="SpaceX">
+                </div>
+                <div class="form-group">
+                  <label for="companyLocation">Location</label>
+                  <input type="text" class="form-control" placeholder="Vancouver">
+                </div>
+                <div class="form-group">
+                  <label for="joburl">Posted Job URL</label>
+                  <input type="text" class="form-control" placeholder="https://">
+                </div>
+                <div class="form-group">
+                  <label for="description">Description / Any Notes</label>
+                  <textarea class="form-control" id="description" rows="3"></textarea>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" value="frontend">
+                  <label class="form-check-label" for="inlineCheckbox1">Front End</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" value="backend">
+                  <label class="form-check-label" for="inlineCheckbox2">Back End</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" value="fullstack">
+                  <label class="form-check-label" for="inlineCheckbox3">Full Stack</label>
+                </div>
+                <div class="form-group">
+                  <label for="coverletter">Cover Letter Submitted ?</label>
+                  <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="coverletterYes" value="yes">
+                      <label class="form-check-label" for="inlineRadio1">Yea</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="coverletterNo" value="no">
+                      <label class="form-check-label" for="inlineRadio2">Nops</label>
+                    </div>                
+                </div>
+                <button type="submit" class="btn btn-primary">Here Goes Another One</button>
+              </form>
+              <hr>         
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6"></div>
+          </div>
+        </section>
+      </div> <!-- end of container -->
+  </div>
+  
+</body>
