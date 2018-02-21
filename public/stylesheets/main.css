@@ -3,7 +3,16 @@ body {
   color: #E94F64;
 }
 
-ul {
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  color: #E94F64;
+}
+
+.navlist {
   background-color: #333;
   list-style: none;
   color: #fff;
@@ -14,7 +23,7 @@ ul {
   align-items: center;
 }
 
-li {
+.navlist li {
   display: inline;
   padding: 5px;
   margin: 0 20px; 
