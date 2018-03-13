@@ -42,7 +42,6 @@ const Job = mongoose.model('Job', jobSchema);
 app.get('/', (req,res) => {
 	Job.find()
 		.then((doc) => {
-			console.log("data recieved, yay");
 			res.render('index', {jobs: doc});
 		});  
 });
@@ -64,7 +63,7 @@ app.post('/addJob', (req, res) => {
 
 
 // Mongoose Schema for Users
-var UserSchema = new mongoose.Schema({
+var UserSchema = new Schema({
   email: {
     type: String,
     unique: true,
@@ -160,7 +159,9 @@ app.post('/register', (req, res, next) => {
 					return next(err);
 				} else {
 					req.session.userId = user._id;
-					return res.redirect('/');
+					let user = user[req.session["userId"]];
+					console.log(user);
+					return res.redirect('/', {user: user});
 				}
 			});
 		} else {

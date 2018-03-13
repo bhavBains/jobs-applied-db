@@ -10,9 +10,15 @@
 
 <body>
   <nav>
-    <ul class="navlist">
-      <li class="logo">logo</li>
-      <li><a href="#">Home</a></li>
+      <% if (locals.errors) {%>
+				<% errors.forEach((error) => { %>
+					<div class="alert alert-danger"><%=error %></div>
+				<% }) %>
+				<%}%>
+    <ul class="navlist navbar navbar-expand-lg">
+      <li class="logo"><a href="/">JT</a></li>
+      <li><a href="/">Home</a></li>
+      
       <li><a href="/users">Login</a></li>
       <li><a href="/users">Register</a></li>
     </ul>
@@ -33,18 +39,22 @@
                 <div class="form-group">
                   <label for="jobTitle">Job Title</label>
                   <input type="text" class="form-control" name="jobTitle" id="jobtitle" placeholder="Web Application Dev">
+                  <small id="emailHelp" class="form-text text-muted">*required</small>
                 </div>
                 <div class="form-group">
                   <label for="comapanyName">Company Name</label>
                   <input type="text" class="form-control" name="company" placeholder="SpaceX">
+                  <small id="emailHelp" class="form-text text-muted">*required</small>
                 </div>
                 <div class="form-group">
                   <label for="companyLocation">Location</label>
                   <input type="text" class="form-control" name="location" placeholder="Vancouver">
+                  <small id="emailHelp" class="form-text text-muted">*required</small>
                 </div>
                 <div class="form-group">
                   <label for="joburl">Posted Job URL</label>
                   <input type="text" class="form-control" name="jobUrl" placeholder="https://">
+                  <small id="emailHelp" class="form-text text-muted">*required</small>
                 </div>
                 <div class="form-group">
                   <label for="description">Description / Any Notes</label>
@@ -80,11 +90,16 @@
 
             <div class="col-6">
               <div>
-                <ul>
+                <ol>
                   <% Object.keys(jobs).forEach(function(job) { %>
-                  <li> <%= jobs[job] %></li>
+                  <div class="jobs-list">
+                      <li> <%= jobs[job].company %></li>
+                      <li> <%= jobs[job].title %></li>
+                      <li> <%= jobs[job].location %></li>
+                  </div>  
+                  
                   <% }); %>
-                </ul>                
+                </ol>                
               </div>
             </div>
           </div>

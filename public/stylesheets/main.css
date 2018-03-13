@@ -1,6 +1,7 @@
 body {
   max-height: 100vh;
   color: #E94F64;
+  font-size: 0.8em;
 }
 
 a {
@@ -10,6 +11,7 @@ a {
 
 a:hover {
   color: #E94F64;
+  text-decoration: none;
 }
 
 .navlist {
@@ -21,6 +23,10 @@ a:hover {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 .navlist li {
@@ -44,6 +50,12 @@ nav {
 .logo {
   width: 100%;
   flex: 1;
+}
+
+nav > ul > li.logo > a {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 10px;
 }
 
 .header h1 {
@@ -82,6 +94,26 @@ body > div > div > section > div:nth-child(1) > div > form > button {
   background-color: #333;
   font-size: larger;
   font-weight: 600;
+}
+
+body > div > div > section > div:nth-child(1) > div > form > button:hover {
+  background-color: #E94F64;
+}
+
+.jobs-list {
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  color: antiquewhite;
+  background-color: #e94f64;
+  font-size: 1.3em;
+  font-weight: 800;
+  box-shadow: 1px 1px #333;
+}
+
+body > div > div > section > div > div:nth-child(2) > div > ol {
+  list-style: none;
 }
 
 /* form {
